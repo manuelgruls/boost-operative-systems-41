@@ -13,7 +13,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/cd760326-6692-49e4-adc8-9d587d70cf76.png" 
           alt="BOOST - Potencializa tus ideas" 
-          className="h-12 w-auto"
+          className="h-20 w-auto"
         />
         <nav className="space-x-8 text-sm">
           <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
