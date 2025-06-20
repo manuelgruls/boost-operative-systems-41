@@ -15,10 +15,7 @@ export const servicesData: Service[] = [
       'Employee onboarding and training workflows',
       'Supplier evaluation and procurement processes',
       'Customer service ticket routing and resolution',
-      'Financial approval workflows and budget tracking',
-      'Document generation and contract management',
-      'Production scheduling and resource allocation',
-      'Maintenance request processing and tracking'
+      'Financial approval workflows and budget tracking'
     ],
     benefits: [
       'Reduce manual errors by 95%',
@@ -40,10 +37,7 @@ export const servicesData: Service[] = [
       'Sales pipeline analysis and forecasting',
       'Customer behavior tracking and segmentation',
       'Financial performance monitoring and budgeting',
-      'Supply chain visibility and optimization',
-      'Quality metrics tracking and trend analysis',
-      'Employee productivity and performance analytics',
-      'Market trend analysis and competitive intelligence'
+      'Supply chain visibility and optimization'
     ],
     benefits: [
       'Make data-driven decisions faster',
@@ -65,10 +59,7 @@ export const servicesData: Service[] = [
       'Customer relationship management integration',
       'Financial accounting and reporting modules',
       'Human resources and payroll management',
-      'Project management and resource planning',
-      'Vendor management and procurement tracking',
-      'Compliance management and regulatory reporting',
-      'Asset management and depreciation tracking'
+      'Project management and resource planning'
     ],
     benefits: [
       'Centralize all operations in one platform',
@@ -90,10 +81,7 @@ export const servicesData: Service[] = [
       'Dynamic pricing optimization and strategy',
       'Customer churn prediction and retention',
       'Fraud detection and risk assessment',
-      'Energy consumption optimization and monitoring',
-      'Workforce planning and skill gap analysis',
-      'Market sentiment analysis and trend prediction',
-      'Automated content generation and personalization'
+      'Energy consumption optimization and monitoring'
     ],
     benefits: [
       'Reduce costs by 15-30%',
@@ -115,10 +103,7 @@ export const servicesData: Service[] = [
       'E-commerce platform integrations',
       'Payment gateway and financial system connections',
       'CRM and marketing automation integrations',
-      'Social media and communication platform links',
-      'Third-party service and vendor integrations',
-      'Mobile app and web application connectivity',
-      'Legacy system modernization and bridge solutions'
+      'Social media and communication platform links'
     ],
     benefits: [
       'Eliminate data silos completely',
