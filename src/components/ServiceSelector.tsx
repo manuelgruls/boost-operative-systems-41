@@ -18,14 +18,23 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
       title: 'Process Automation',
       description: 'Automate repetitive workflows and boost your internal efficiency.',
       useCases: [
-        'Automated inventory management',
-        'Order processing workflows',
-        'Quality control checklists'
+        'Automated inventory management and stock alerts',
+        'Order processing workflows from quote to delivery',
+        'Quality control checklists and inspection tracking',
+        'Employee onboarding and training workflows',
+        'Supplier evaluation and procurement processes',
+        'Customer service ticket routing and resolution',
+        'Financial approval workflows and budget tracking',
+        'Document generation and contract management',
+        'Production scheduling and resource allocation',
+        'Maintenance request processing and tracking'
       ],
       benefits: [
         'Reduce manual errors by 95%',
         'Save 20+ hours per week',
-        'Improve process consistency'
+        'Improve process consistency',
+        'Increase operational efficiency by 40%',
+        'Enhance compliance and audit trails'
       ]
     },
     {
@@ -34,14 +43,23 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
       title: 'Dashboards & Analytics',
       description: 'Understand your data in real time to make faster decisions.',
       useCases: [
-        'Real-time production monitoring',
-        'Performance KPI tracking',
-        'Predictive maintenance alerts'
+        'Real-time production monitoring and alerts',
+        'Performance KPI tracking and reporting',
+        'Predictive maintenance alerts and scheduling',
+        'Sales pipeline analysis and forecasting',
+        'Customer behavior tracking and segmentation',
+        'Financial performance monitoring and budgeting',
+        'Supply chain visibility and optimization',
+        'Quality metrics tracking and trend analysis',
+        'Employee productivity and performance analytics',
+        'Market trend analysis and competitive intelligence'
       ],
       benefits: [
-        'Make data-driven decisions',
+        'Make data-driven decisions faster',
         'Identify bottlenecks instantly',
-        'Optimize resource allocation'
+        'Optimize resource allocation',
+        'Increase revenue by 25% through insights',
+        'Reduce downtime with predictive analytics'
       ]
     },
     {
@@ -50,14 +68,23 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
       title: 'ERP Custom Modules',
       description: 'Integrate and control your production flow with smart tools.',
       useCases: [
-        'Custom production planning',
-        'Supply chain integration',
-        'Multi-location management'
+        'Custom production planning and scheduling',
+        'Supply chain integration and management',
+        'Multi-location inventory synchronization',
+        'Customer relationship management integration',
+        'Financial accounting and reporting modules',
+        'Human resources and payroll management',
+        'Project management and resource planning',
+        'Vendor management and procurement tracking',
+        'Compliance management and regulatory reporting',
+        'Asset management and depreciation tracking'
       ],
       benefits: [
-        'Centralize all operations',
+        'Centralize all operations in one platform',
         'Improve coordination across teams',
-        'Scale operations efficiently'
+        'Scale operations efficiently',
+        'Reduce operational costs by 30%',
+        'Enhance data accuracy and consistency'
       ]
     },
     {
@@ -66,14 +93,23 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
       title: 'AI Optimization',
       description: 'Use AI to forecast, simulate, and reduce costs.',
       useCases: [
-        'Demand forecasting',
-        'Route optimization',
-        'Predictive quality control'
+        'Demand forecasting and inventory optimization',
+        'Route optimization for delivery and logistics',
+        'Predictive quality control and defect detection',
+        'Dynamic pricing optimization and strategy',
+        'Customer churn prediction and retention',
+        'Fraud detection and risk assessment',
+        'Energy consumption optimization and monitoring',
+        'Workforce planning and skill gap analysis',
+        'Market sentiment analysis and trend prediction',
+        'Automated content generation and personalization'
       ],
       benefits: [
         'Reduce costs by 15-30%',
-        'Improve forecast accuracy',
-        'Prevent quality issues'
+        'Improve forecast accuracy by 80%',
+        'Prevent quality issues before they occur',
+        'Increase customer satisfaction by 35%',
+        'Optimize decision-making with AI insights'
       ]
     },
     {
@@ -82,14 +118,23 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
       title: 'Web & System Integrations',
       description: 'Connect tools and centralize your operations in the cloud.',
       useCases: [
-        'API integrations with existing tools',
-        'Cloud migration solutions',
-        'Multi-platform synchronization'
+        'API integrations with existing business tools',
+        'Cloud migration and modernization solutions',
+        'Multi-platform data synchronization',
+        'E-commerce platform integrations',
+        'Payment gateway and financial system connections',
+        'CRM and marketing automation integrations',
+        'Social media and communication platform links',
+        'Third-party service and vendor integrations',
+        'Mobile app and web application connectivity',
+        'Legacy system modernization and bridge solutions'
       ],
       benefits: [
-        'Eliminate data silos',
-        'Access from anywhere',
-        'Reduce IT maintenance'
+        'Eliminate data silos completely',
+        'Access systems from anywhere',
+        'Reduce IT maintenance costs by 50%',
+        'Improve data flow and accuracy',
+        'Enable seamless team collaboration'
       ]
     }
   ];
@@ -153,7 +198,7 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="text-lg font-semibold text-blue-400 mb-4">Example Use Cases:</h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 max-h-64 overflow-y-auto">
                       {activeServiceData.useCases.map((useCase, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <div className="text-blue-400 mt-0.5">•</div>
