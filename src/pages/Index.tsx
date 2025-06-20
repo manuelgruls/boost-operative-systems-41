@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,12 +11,12 @@ const Index = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans">
-      {/* Navigation */}
-      <header className="flex justify-between items-center p-6 max-w-7xl mx-auto">
+      {/* Sticky Navigation */}
+      <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 flex justify-between items-center p-6 max-w-7xl mx-auto">
         <img 
           src="/lovable-uploads/cd760326-6692-49e4-adc8-9d587d70cf76.png" 
           alt="BOOST - Potencializa tus ideas" 
-          className="h-auto w-auto"
+          className="h-16 w-auto"
         />
         <nav className="space-x-8 text-sm font-medium">
           <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
@@ -48,16 +47,15 @@ const Index = () => {
         </div>
         <div className="flex justify-center">
           <div className="relative w-96 h-96">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
-            <div className="relative w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full border border-blue-400/30 flex items-center justify-center">
-              <div className="w-3/4 h-3/4 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full border border-blue-400/50 flex items-center justify-center">
-                <Globe className="w-24 h-24 text-blue-400 animate-pulse" />
-              </div>
-              {/* Connection nodes */}
-              <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-              <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-              <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+            {/* Background blur effect that matches the uploaded image */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full blur-3xl"></div>
+            {/* Main sphere image */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/c31f9c02-847c-4ad3-b078-27f668631981.png" 
+                alt="AI Network Sphere" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
