@@ -134,7 +134,7 @@ const StartProject = () => {
             <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Boost</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Custom tools powered by AI, built for manufacturing and logistics companies in LATAM.
+            Custom tools powered by AI, built for manufacturing and logistics companies.
           </p>
           <Button 
             onClick={scrollToForm}
@@ -316,17 +316,6 @@ const StartProject = () => {
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Section */}
-      <section className="py-16 px-6 bg-gray-900/50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-semibold mb-8 text-white">Trusted by companies across LATAM</h3>
-          <div className="flex justify-center items-center gap-12 opacity-60">
-            <div className="text-gray-400 font-bold text-xl">LPET</div>
-            <div className="text-gray-400 font-bold text-xl">PEFNA</div>
           </div>
         </div>
       </section>
