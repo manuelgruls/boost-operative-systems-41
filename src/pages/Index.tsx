@@ -3,216 +3,315 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Eye, FileText, Layers, Computer } from "lucide-react";
+import { Eye, FileText, Layers, Computer, Globe, Target, Settings, TrendingUp, CheckCircle, ArrowUp } from "lucide-react";
 
 const Index = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="bg-gradient-to-b from-[#0a0e1a] to-[#1a1f2e] text-white min-h-screen font-sans">
+    <div className="bg-white text-gray-900 min-h-screen font-sans">
       {/* Navigation */}
       <header className="flex justify-between items-center p-6 max-w-7xl mx-auto">
         <img 
           src="/lovable-uploads/cd760326-6692-49e4-adc8-9d587d70cf76.png" 
           alt="BOOST - Potencializa tus ideas" 
-          className="h-20 w-auto"
+          className="h-32 w-auto"
         />
-        <nav className="space-x-8 text-sm">
-          <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
-          <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
-          <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+        <nav className="space-x-8 text-sm font-medium">
+          <a href="#services" className="hover:text-[#009999] transition-colors">Services</a>
+          <a href="#how-we-work" className="hover:text-[#009999] transition-colors">How We Work</a>
+          <a href="#about" className="hover:text-[#009999] transition-colors">About</a>
+          <a href="#contact" className="hover:text-[#009999] transition-colors">Contact</a>
         </nav>
       </header>
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Build innovative{" "}
-            <span className="text-blue-400">AI applications</span>{" "}
-            for your business
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            We help companies develop custom AI solutions that drive growth and operational efficiency.
+          <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-[#1A1A1A]">
+            AI Solutions Built Around{" "}
+            <span className="text-[#009999]">Your Operations</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            From idea to implementation, we craft custom tools that automate, optimize, and unlock value across industries.
           </p>
-          <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg rounded-lg">
-            Get started
-          </Button>
+          <div className="space-x-4">
+            <Button className="bg-[#009999] hover:bg-[#007777] text-white px-8 py-4 text-lg rounded-lg">
+              Start Your Project
+            </Button>
+            <Button variant="outline" className="border-[#009999] text-[#009999] hover:bg-[#009999] hover:text-white px-8 py-4 text-lg rounded-lg">
+              Explore Use Cases
+            </Button>
+          </div>
         </div>
         <div className="flex justify-center">
           <div className="relative w-96 h-96">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl"></div>
-            <div className="relative w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full border border-blue-400/30 flex items-center justify-center">
-              <div className="w-3/4 h-3/4 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-full border border-blue-400/50 flex items-center justify-center">
-                <div className="w-2/3 h-2/3 bg-gradient-to-br from-blue-500/30 to-purple-500/30 rounded-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#009999]/20 to-[#009999]/10 rounded-full blur-3xl"></div>
+            <div className="relative w-full h-full bg-gradient-to-br from-[#009999]/10 to-[#009999]/5 rounded-full border border-[#009999]/30 flex items-center justify-center">
+              <div className="w-3/4 h-3/4 bg-gradient-to-br from-[#009999]/20 to-[#009999]/10 rounded-full border border-[#009999]/50 flex items-center justify-center">
+                <Globe className="w-24 h-24 text-[#009999] animate-pulse" />
               </div>
-              {/* Connection lines */}
-              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full"></div>
-              <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-purple-400 rounded-full"></div>
-              <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-blue-300 rounded-full"></div>
-              <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-purple-300 rounded-full"></div>
+              {/* Connection nodes */}
+              <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-[#009999] rounded-full animate-pulse"></div>
+              <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-[#009999]/70 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-[#009999]/70 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-[#009999] rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Us / Our Mission */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <h3 className="text-4xl font-bold mb-6">
-              About Us <span className="text-gray-500">/ Our Mission</span>
-            </h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              We empower businesses by providing cutting-edge AI technology. Fostering innovation with a commitment to ethical practices and impactful results.
-            </p>
+      {/* Our Services */}
+      <section id="services" className="bg-[#F4F4F4] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-16 text-center text-[#1A1A1A]">
+            Strategic AI, Custom-Built for Real-World Ops
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="p-3 bg-[#009999]/10 rounded-lg w-fit mb-4">
+                <Target className="w-8 h-8 text-[#009999]" />
+              </div>
+              <CardTitle className="text-xl font-semibold mb-3 text-[#1A1A1A]">
+                AI Strategy & Opportunity Mapping
+              </CardTitle>
+              <p className="text-gray-600">
+                Identify high-impact automation opportunities and develop comprehensive AI roadmaps tailored to your business goals.
+              </p>
+            </Card>
+            
+            <Card className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="p-3 bg-[#009999]/10 rounded-lg w-fit mb-4">
+                <Computer className="w-8 h-8 text-[#009999]" />
+              </div>
+              <CardTitle className="text-xl font-semibold mb-3 text-[#1A1A1A]">
+                Custom Tool & Dashboard Development
+              </CardTitle>
+              <p className="text-gray-600">
+                Build bespoke applications and interactive dashboards that transform complex data into actionable insights.
+              </p>
+            </Card>
+            
+            <Card className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="p-3 bg-[#009999]/10 rounded-lg w-fit mb-4">
+                <TrendingUp className="w-8 h-8 text-[#009999]" />
+              </div>
+              <CardTitle className="text-xl font-semibold mb-3 text-[#1A1A1A]">
+                Process Optimization via AI
+              </CardTitle>
+              <p className="text-gray-600">
+                Streamline workflows and eliminate bottlenecks using machine learning and intelligent automation solutions.
+              </p>
+            </Card>
+            
+            <Card className="bg-white p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="p-3 bg-[#009999]/10 rounded-lg w-fit mb-4">
+                <Settings className="w-8 h-8 text-[#009999]" />
+              </div>
+              <CardTitle className="text-xl font-semibold mb-3 text-[#1A1A1A]">
+                ERP/Data Integration & Automation
+              </CardTitle>
+              <p className="text-gray-600">
+                Seamlessly connect disparate systems and automate data flows for enhanced operational efficiency.
+              </p>
+            </Card>
           </div>
-          <div className="grid grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-blue-600/20 rounded-lg">
-                  <Layers className="w-6 h-6 text-blue-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-blue-400">Innovation</h4>
-                  <p className="text-sm text-gray-400">Produce obvious with a commitment to ethical practices</p>
-                </div>
+          
+          <div className="text-center mt-12">
+            <Button variant="outline" className="border-[#009999] text-[#009999] hover:bg-[#009999] hover:text-white px-8 py-3">
+              View All Use Cases
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work */}
+      <section id="how-we-work" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-16 text-center text-[#1A1A1A]">How We Work</h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#009999] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-purple-600/20 rounded-lg">
-                  <FileText className="w-6 h-6 text-purple-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-purple-400">Predictive Analytics</h4>
-                  <p className="text-sm text-gray-400">Drive utilisation</p>
-                </div>
-              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#1A1A1A]">Diagnose</h3>
+              <ul className="text-gray-600 space-y-1">
+                <li>• Business process audit</li>
+                <li>• Pain point identification</li>
+                <li>• Opportunity assessment</li>
+              </ul>
             </div>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-cyan-600/20 rounded-lg">
-                  <Computer className="w-6 h-6 text-cyan-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-cyan-400">Ethics</h4>
-                  <p className="text-sm text-gray-400">Improvisos integrate e impactful</p>
-                </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#009999] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-green-600/20 rounded-lg">
-                  <Layers className="w-6 h-6 text-green-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-green-400">Process Automation</h4>
-                  <p className="text-sm text-gray-400">Intermediate</p>
-                </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#1A1A1A]">Design</h3>
+              <ul className="text-gray-600 space-y-1">
+                <li>• Solution architecture</li>
+                <li>• User experience mapping</li>
+                <li>• Technical specifications</li>
+              </ul>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#009999] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#1A1A1A]">Build</h3>
+              <ul className="text-gray-600 space-y-1">
+                <li>• Agile development</li>
+                <li>• Quality assurance</li>
+                <li>• Performance optimization</li>
+              </ul>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#009999] rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-2xl font-bold text-white">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#1A1A1A]">Deliver</h3>
+              <ul className="text-gray-600 space-y-1">
+                <li>• Deployment & training</li>
+                <li>• Support & maintenance</li>
+                <li>• Performance monitoring</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Highlights */}
+      <section className="bg-[#F4F4F4] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="bg-white p-8 rounded-xl">
+              <div className="text-4xl font-bold text-[#009999] mb-2">+50%</div>
+              <p className="text-gray-600 font-medium">Uptime Improvement</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl">
+              <div className="text-4xl font-bold text-[#009999] mb-2">30%</div>
+              <p className="text-gray-600 font-medium">Time-to-Decision Reduction</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl">
+              <div className="text-4xl font-bold text-[#009999] mb-2">40%</div>
+              <p className="text-gray-600 font-medium">Adoption Rate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About BOOST */}
+      <section id="about" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <h2 className="text-4xl font-bold mb-6 text-[#1A1A1A]">
+                Your AI Partner for Smarter Operations
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                BOOST is a specialized AI and automation studio focused on helping companies unlock performance through tailored digital tools. We bridge the gap between complex data and real-world decision-making by designing scalable, efficient, and high-impact solutions.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                Whether you're optimizing a supply chain, digitizing operations, or building predictive systems — BOOST delivers tools that make your business faster, leaner, and more intelligent.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center p-6">
+                <CheckCircle className="w-12 h-12 text-[#009999] mb-4 mx-auto" />
+                <h4 className="font-semibold text-[#1A1A1A] mb-2">Built for Efficiency</h4>
+                <p className="text-sm text-gray-600">Streamlined solutions that maximize impact</p>
+              </div>
+              <div className="text-center p-6">
+                <Eye className="w-12 h-12 text-[#009999] mb-4 mx-auto" />
+                <h4 className="font-semibold text-[#1A1A1A] mb-2">Data-Driven by Design</h4>
+                <p className="text-sm text-gray-600">Every decision backed by intelligent insights</p>
+              </div>
+              <div className="text-center p-6">
+                <TrendingUp className="w-12 h-12 text-[#009999] mb-4 mx-auto" />
+                <h4 className="font-semibold text-[#1A1A1A] mb-2">Fast-to-Deploy Tools</h4>
+                <p className="text-sm text-gray-600">Rapid implementation for immediate value</p>
+              </div>
+              <div className="text-center p-6">
+                <Layers className="w-12 h-12 text-[#009999] mb-4 mx-auto" />
+                <h4 className="font-semibold text-[#1A1A1A] mb-2">Scalable by Nature</h4>
+                <p className="text-sm text-gray-600">Solutions that grow with your business</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* AI Solutions */}
-      <section id="services" className="max-w-7xl mx-auto px-6 py-20">
-        <h3 className="text-4xl font-bold mb-16">AI Solutions</h3>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="flex items-start space-x-4">
-            <div className="p-3 bg-blue-600/20 rounded-lg mt-1">
-              <Eye className="w-8 h-8 text-blue-400" />
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold mb-3">Computer Vision</h4>
-              <p className="text-gray-300 leading-relaxed">
-                We produce acadejobre direction strancy thoughtantigizing amicitl methods of innovation.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start space-x-4">
-            <div className="p-3 bg-purple-600/20 rounded-lg mt-1">
-              <FileText className="w-8 h-8 text-purple-400" />
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold mb-3">Natural Language Processing</h4>
-              <p className="text-gray-300 leading-relaxed">
-                Fearching innovation with impacts and informed engments results.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start space-x-4">
-            <div className="p-3 bg-cyan-600/20 rounded-lg mt-1">
-              <Layers className="w-8 h-8 text-cyan-400" />
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold mb-3">Predictive Analytics</h4>
-              <p className="text-gray-300 leading-relaxed">
-                Unipur-estimated success and to predictavel ano-reduzida achieved.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start space-x-4">
-            <div className="p-3 bg-green-600/20 rounded-lg mt-1">
-              <Computer className="w-8 h-8 text-green-400" />
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold mb-3">Process Automation</h4>
-              <p className="text-gray-300 leading-relaxed">
-                Improving workflow efficiency +90% productivity
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies & Contact */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Case Studies */}
-          <div>
-            <h3 className="text-4xl font-bold mb-12">Case Studies</h3>
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50">
-              <div className="text-sm text-gray-400 mb-2">CLIENTLOGO</div>
-              <h4 className="text-2xl font-semibold mb-4">Improving Workflow Efficiency</h4>
-              <div className="text-5xl font-bold text-green-400 mb-2">+19%</div>
-              <p className="text-gray-300">Productivity increase through AI automation</p>
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div id="contact">
-            <h3 className="text-4xl font-bold mb-8">Contact us</h3>
-            <form className="space-y-6">
+      {/* Contact Section */}
+      <section id="contact" className="bg-[#F4F4F4] py-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl font-bold mb-8 text-center text-[#1A1A1A]">Let's Build Something Intelligent</h2>
+          <form className="space-y-6 bg-white p-8 rounded-xl">
+            <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
                 <Input 
-                  className="bg-gray-800/50 border-gray-600 text-white placeholder-gray-400" 
+                  className="border-gray-300 focus:border-[#009999] focus:ring-[#009999]" 
                   placeholder="Your name" 
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Company</label>
                 <Input 
-                  type="email" 
-                  className="bg-gray-800/50 border-gray-600 text-white placeholder-gray-400" 
-                  placeholder="your@email.com" 
+                  className="border-gray-300 focus:border-[#009999] focus:ring-[#009999]" 
+                  placeholder="Your company" 
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                <Textarea 
-                  className="bg-gray-800/50 border-gray-600 text-white placeholder-gray-400 min-h-[120px]" 
-                  placeholder="Your message..." 
-                />
-              </div>
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-3">
-                Send Message
-              </Button>
-            </form>
-          </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <Input 
+                type="email" 
+                className="border-gray-300 focus:border-[#009999] focus:ring-[#009999]" 
+                placeholder="your@email.com" 
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Challenge or Idea</label>
+              <Textarea 
+                className="border-gray-300 focus:border-[#009999] focus:ring-[#009999] min-h-[120px]" 
+                placeholder="Tell us about your project or challenge..." 
+              />
+            </div>
+            <Button className="w-full bg-[#009999] hover:bg-[#007777] text-white py-3 text-lg">
+              Send Message
+            </Button>
+            <p className="text-sm text-gray-500 text-center">Thanks! We'll reply in 24 hours.</p>
+          </form>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 py-8 text-center text-gray-400">
+      <footer className="bg-[#1A1A1A] text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          © {new Date().getFullYear()} Boost. All rights reserved.
+          <div className="flex justify-between items-center">
+            <img 
+              src="/lovable-uploads/cd760326-6692-49e4-adc8-9d587d70cf76.png" 
+              alt="BOOST" 
+              className="h-12 w-auto opacity-80"
+            />
+            <div className="flex space-x-8 text-sm">
+              <a href="#" className="hover:text-[#009999] transition-colors">Terms</a>
+              <a href="#" className="hover:text-[#009999] transition-colors">Privacy</a>
+              <a href="#" className="hover:text-[#009999] transition-colors">LinkedIn</a>
+            </div>
+            <button 
+              onClick={scrollToTop}
+              className="p-3 bg-[#009999] rounded-full hover:bg-[#007777] transition-colors"
+            >
+              <ArrowUp className="w-5 h-5" />
+            </button>
+          </div>
+          <div className="text-center text-gray-400 text-sm mt-8">
+            © {new Date().getFullYear()} BOOST. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>
