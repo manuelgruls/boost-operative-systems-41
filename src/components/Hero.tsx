@@ -14,15 +14,12 @@ const Hero = () => {
         <p className="text-xl text-gray-300 mb-8 leading-relaxed">
           From idea to implementation, we craft custom tools that automate, optimize, and unlock value across industries.
         </p>
-        <div className="space-x-4">
+        <div>
           <Link to="/start-project">
             <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg rounded-lg">
               Start Your Project
             </Button>
           </Link>
-          <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 px-8 py-4 text-lg rounded-lg">
-            Explore Use Cases
-          </Button>
         </div>
       </div>
       <div className="flex justify-center">
