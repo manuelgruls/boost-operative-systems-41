@@ -60,12 +60,6 @@ const Services = () => {
             </p>
           </Card>
         </div>
-        
-        <div className="text-center mt-12">
-          <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-gray-900 px-8 py-3">
-            View All Use Cases
-          </Button>
-        </div>
       </div>
     </section>
   );
