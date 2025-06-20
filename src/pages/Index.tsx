@@ -10,13 +10,13 @@ const Index = () => {
   };
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen font-sans">
+    <div className="bg-black text-white min-h-screen font-sans">
       {/* Sticky Navigation */}
-      <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 flex justify-between items-center p-6 max-w-7xl mx-auto">
+      <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 flex justify-between items-center p-6 max-w-7xl mx-auto">
         <img 
           src="/lovable-uploads/cd760326-6692-49e4-adc8-9d587d70cf76.png" 
           alt="BOOST - Potencializa tus ideas" 
-          className="h-16 w-auto"
+          className="h-35 w-auto"
         />
         <nav className="space-x-8 text-sm font-medium">
           <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
@@ -62,7 +62,7 @@ const Index = () => {
       </section>
 
       {/* Our Services */}
-      <section id="services" className="bg-gray-800 py-20">
+      <section id="services" className="bg-black py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-16 text-center text-white">
             Strategic AI, Custom-Built for Real-World Ops
@@ -182,7 +182,7 @@ const Index = () => {
       </section>
 
       {/* Solution Highlights */}
-      <section className="bg-gray-800 py-20">
+      <section className="bg-black py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="bg-gray-700 p-8 rounded-xl border border-gray-600">
@@ -243,7 +243,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-gray-800 py-20">
+      <section id="contact" className="bg-black py-20">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-8 text-center text-white">Let's Build Something Intelligent</h2>
           <form className="space-y-6 bg-gray-700 p-8 rounded-xl border border-gray-600">
@@ -287,7 +287,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 text-white py-12">
+      <footer className="bg-black text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center">
             <img 
