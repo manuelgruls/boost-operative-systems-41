@@ -95,11 +95,13 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
   ];
 
   const handleServiceClick = (serviceId: string) => {
+    // Clear all other selections and only select the clicked service
     onToggleService(serviceId);
-    setActiveService(activeService === serviceId ? null : serviceId);
+    setActiveService(serviceId);
   };
 
   const activeServiceData = services.find(service => service.id === activeService);
+  const selectedService = selectedServices.length > 0 ? selectedServices[0] : null;
 
   return (
     <section className="py-16 px-6">
@@ -110,7 +112,7 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
             <Card 
               key={service.id}
               className={`cursor-pointer transition-all duration-300 hover:scale-105 ${
-                selectedServices.includes(service.id) 
+                selectedService === service.id
                   ? 'bg-blue-600 border-blue-400 shadow-lg shadow-blue-500/25' 
                   : 'bg-gray-800 border-gray-600 hover:border-blue-400'
               } ${
@@ -122,7 +124,7 @@ const ServiceSelector = ({ selectedServices, onToggleService }: ServiceSelectorP
             >
               <CardContent className="p-6 text-center">
                 <div className={`flex justify-center mb-4 transition-colors duration-300 ${
-                  selectedServices.includes(service.id) || activeService === service.id
+                  selectedService === service.id || activeService === service.id
                     ? 'text-white' 
                     : 'text-blue-400'
                 }`}>

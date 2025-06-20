@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -14,11 +13,8 @@ const StartProject = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const toggleService = (serviceId: string) => {
-    setSelectedServices(prev => 
-      prev.includes(serviceId) 
-        ? prev.filter(id => id !== serviceId)
-        : [...prev, serviceId]
-    );
+    // Only allow one service to be selected at a time
+    setSelectedServices([serviceId]);
   };
 
   const toggleChallenge = (challenge: string) => {
