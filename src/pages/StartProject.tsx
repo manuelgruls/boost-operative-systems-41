@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Gear, BarChart, Factory, Bot, Globe } from "lucide-react";
+import { ArrowLeft, Settings, BarChart, Factory, Bot, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const StartProject = () => {
@@ -16,7 +15,7 @@ const StartProject = () => {
   const services = [
     {
       id: 'automation',
-      icon: <Gear className="w-8 h-8" />,
+      icon: <Settings className="w-8 h-8" />,
       title: 'Process Automation',
       description: 'Automate repetitive workflows and boost your internal efficiency.'
     },
