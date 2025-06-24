@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full blur-3xl"></div>
           <div className="relative w-full h-full flex items-center justify-center">
             <img 
-              src="/lovable-uploads/c31f9c02-847c-4ad3-b078-27f668631981.png" 
+              src="/lovable-uploads/bdd802c5-45bc-4cae-93be-dc3d68bfafce.png" 
               alt="AI Network Sphere" 
               className="w-full h-full object-contain"
             />
