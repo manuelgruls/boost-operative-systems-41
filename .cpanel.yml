@@ -1,10 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/YOUR_CPANEL_USERNAME/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp favicon.ico $DEPLOYPATH
-    - /bin/cp manifest.json $DEPLOYPATH
-    - /bin/cp robots.txt $DEPLOYPATH
-    - /bin/cp -R assets $DEPLOYPATH
-    - /bin/cp -R styles $DEPLOYPATH
+    - export DEPLOYPATH=/home/booskvbk/public_html/
+    - /bin/cp -R public/* $DEPLOYPATH
+    - /bin/cp -R src/* $DEPLOYPATH
+    - /bin/cp -R supabase/* $DEPLOYPATH
