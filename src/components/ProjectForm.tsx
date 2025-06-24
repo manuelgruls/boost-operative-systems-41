@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface ProjectFormProps {
   selectedChallenges: string[];
@@ -13,6 +15,16 @@ interface ProjectFormProps {
 }
 
 const ProjectForm = ({ selectedChallenges, onToggleChallenge, onSubmit }: ProjectFormProps) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    companyName: '',
+    role: '',
+    email: '',
+    phone: '',
+    otherChallenge: ''
+  });
+  const { toast } = useToast();
+
   const challenges = [
     'Manual processes',
     'Lack of visibility',
@@ -21,25 +33,83 @@ const ProjectForm = ({ selectedChallenges, onToggleChallenge, onSubmit }: Projec
     'Integration between systems'
   ];
 
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Prepare data for Supabase
+      const submissionData = {
+        'Company Name': formData.companyName,
+        'Your Role': formData.role,
+        'Email': formData.email,
+        'WhatsApp / Phone (Optional)': formData.phone ? parseFloat(formData.phone) : null,
+        "What's your biggest challenge today?": selectedChallenges.join(', '),
+        'Other challenge (Optional)': formData.otherChallenge
+      };
+
+      console.log('Submitting data:', submissionData);
+
+      const { error } = await supabase
+        .from('Lovable_Boost_Inputs')
+        .insert([submissionData]);
+
+      if (error) {
+        console.error('Supabase error:', error);
+        toast({
+          title: "Error",
+          description: "There was an error submitting your form. Please try again.",
+          variant: "destructive"
+        });
+      } else {
+        console.log('Data submitted successfully');
+        toast({
+          title: "Success!",
+          description: "Your project brief has been submitted successfully.",
+        });
+        // Call the original onSubmit to show the thank you page
+        onSubmit(e);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "There was an error submitting your form. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="project-form" className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <h2 className="text-3xl font-bold mb-8">Tell us about your need</h2>
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={handleFormSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
                   <Input 
                     required
+                    value={formData.companyName}
+                    onChange={(e) => handleInputChange('companyName', e.target.value)}
                     className="bg-gray-800 border-gray-600 text-white focus:border-blue-400 focus:ring-blue-400" 
                     placeholder="Your company name" 
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Your Role</label>
-                  <Select>
+                  <Select value={formData.role} onValueChange={(value) => handleInputChange('role', value)}>
                     <SelectTrigger className="bg-gray-800 border-gray-600 text-white focus:border-blue-400">
                       <SelectValue placeholder="Select your role" />
                     </SelectTrigger>
@@ -59,6 +129,8 @@ const ProjectForm = ({ selectedChallenges, onToggleChallenge, onSubmit }: Projec
                 <Input 
                   type="email" 
                   required
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
                   className="bg-gray-800 border-gray-600 text-white focus:border-blue-400 focus:ring-blue-400" 
                   placeholder="your@email.com" 
                 />
@@ -67,6 +139,8 @@ const ProjectForm = ({ selectedChallenges, onToggleChallenge, onSubmit }: Projec
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">WhatsApp / Phone (Optional)</label>
                 <Input 
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange('phone', e.target.value)}
                   className="bg-gray-800 border-gray-600 text-white focus:border-blue-400 focus:ring-blue-400" 
                   placeholder="+1 234 567 8900" 
                 />
@@ -95,6 +169,8 @@ const ProjectForm = ({ selectedChallenges, onToggleChallenge, onSubmit }: Projec
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">Other challenge (Optional)</label>
                 <Textarea 
+                  value={formData.otherChallenge}
+                  onChange={(e) => handleInputChange('otherChallenge', e.target.value)}
                   className="bg-gray-800 border-gray-600 text-white focus:border-blue-400 focus:ring-blue-400" 
                   placeholder="Describe any other challenge..." 
                 />
@@ -114,9 +190,10 @@ const ProjectForm = ({ selectedChallenges, onToggleChallenge, onSubmit }: Projec
 
               <Button 
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-4 text-lg"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-4 text-lg disabled:opacity-50"
               >
-                Send My Project Brief
+                {isSubmitting ? 'Submitting...' : 'Send My Project Brief'}
               </Button>
             </form>
           </div>

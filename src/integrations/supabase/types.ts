@@ -9,7 +9,33 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      Lovable_Boost_Inputs: {
+        Row: {
+          "Company Name": string
+          Email: string | null
+          "Other challenge (Optional)": string | null
+          "What's your biggest challenge today?": string | null
+          "WhatsApp / Phone (Optional)": number | null
+          "Your Role": string
+        }
+        Insert: {
+          "Company Name": string
+          Email?: string | null
+          "Other challenge (Optional)"?: string | null
+          "What's your biggest challenge today?"?: string | null
+          "WhatsApp / Phone (Optional)"?: number | null
+          "Your Role": string
+        }
+        Update: {
+          "Company Name"?: string
+          Email?: string | null
+          "Other challenge (Optional)"?: string | null
+          "What's your biggest challenge today?"?: string | null
+          "WhatsApp / Phone (Optional)"?: number | null
+          "Your Role"?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
