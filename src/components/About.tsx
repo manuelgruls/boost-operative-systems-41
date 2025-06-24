@@ -9,13 +9,16 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2 className="text-4xl font-bold mb-6 text-white">
-              Your AI Partner for Smarter Operations
+              About BOOST
             </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              BOOST is a specialized AI and automation studio focused on helping companies unlock performance through tailored digital tools. We bridge the gap between complex data and real-world decision-making by designing scalable, efficient, and high-impact solutions.
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              Boost is a technology consultancy focused on transforming operations for manufacturing and logistics companies through intelligent systems. We specialize in developing custom tools powered by automation, artificial intelligence, and real-time data analytics to help businesses optimize their processes, reduce inefficiencies, and make faster, smarter decisions.
+            </p>
+            <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              Our modular solutions are designed to integrate seamlessly into existing workflows, enabling better planning, clearer visibility, and measurable impact across key areas like production, warehousing, and distribution.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              Whether you're optimizing a supply chain, digitizing operations, or building predictive systems — BOOST delivers tools that make your business faster, leaner, and more intelligent.
+              With a strong commercial focus, Boost delivers not just technology — but business value. We partner with our clients to understand their goals, build scalable tools around their needs, and ensure every solution supports growth, profitability, and long-term competitiveness in an evolving market.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6">
