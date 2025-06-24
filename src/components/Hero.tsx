@@ -29,12 +29,13 @@ const Hero = () => {
       </div>
       <div className="flex justify-center">
         <div className="relative w-96 h-96">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute inset-4 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-full blur-2xl"></div>
           <div className="relative w-full h-full flex items-center justify-center">
             <img 
               src="/lovable-uploads/bdd802c5-45bc-4cae-93be-dc3d68bfafce.png" 
               alt="AI Network Sphere" 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain mix-blend-screen filter drop-shadow-2xl"
             />
           </div>
         </div>
