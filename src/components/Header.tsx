@@ -1,9 +1,12 @@
 
 import React from 'react';
 import { useScroll } from '@/contexts/ScrollContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const Header = () => {
   const { scrollY, scrollProgress } = useScroll();
+  const { t } = useLanguage();
   
   const headerOpacity = Math.max(0.9, 1 - scrollProgress * 0.3);
   const headerScale = Math.max(0.95, 1 - scrollProgress * 0.05);
@@ -23,31 +26,32 @@ const Header = () => {
         alt="BOOST - Potencializa tus ideas" 
         className="h-24 w-auto transition-all duration-300 hover:scale-105"
       />
-      <nav className="space-x-6 text-sm font-medium">
+      <nav className="flex items-center space-x-6 text-sm font-medium">
         <a 
           href="#services" 
           className="hover:text-blue-400 transition-all duration-300 hover:scale-110 inline-block"
         >
-          Services
+          {t('nav.services')}
         </a>
         <a 
           href="#how-we-work" 
           className="hover:text-purple-400 transition-all duration-300 hover:scale-110 inline-block"
         >
-          How We Work
+          {t('nav.howWeWork')}
         </a>
         <a 
           href="#about" 
           className="hover:text-cyan-400 transition-all duration-300 hover:scale-110 inline-block"
         >
-          About
+          {t('nav.about')}
         </a>
         <a 
           href="#contact" 
           className="hover:text-pink-400 transition-all duration-300 hover:scale-110 inline-block"
         >
-          Contact
+          {t('nav.contact')}
         </a>
+        <LanguageToggle />
       </nav>
     </header>
   );

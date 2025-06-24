@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ArrowUp } from "lucide-react";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -17,9 +20,9 @@ const Footer = () => {
             className="h-12 w-auto opacity-80"
           />
           <div className="flex space-x-8 text-sm">
-            <a href="#" className="hover:text-blue-400 transition-colors">Terms</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-blue-400 transition-colors">LinkedIn</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">{t('footer.terms')}</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">{t('footer.privacy')}</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">{t('footer.linkedin')}</a>
           </div>
           <button 
             onClick={scrollToTop}
@@ -29,7 +32,7 @@ const Footer = () => {
           </button>
         </div>
         <div className="text-center text-gray-400 text-sm mt-8">
-          © {new Date().getFullYear()} BOOST. All rights reserved.
+          © {new Date().getFullYear()} BOOST. {t('footer.rights')}
         </div>
       </div>
     </footer>

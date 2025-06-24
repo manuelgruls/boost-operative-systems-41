@@ -1,46 +1,49 @@
 
 import React from 'react';
 import { Eye, Layers, TrendingUp, CheckCircle } from "lucide-react";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2 className="text-4xl font-bold mb-6 text-white">
-              About BOOST
+              {t('about.title')}
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Boost is a technology consultancy focused on transforming operations for manufacturing and logistics companies through intelligent systems. We specialize in developing custom tools powered by automation, artificial intelligence, and real-time data analytics to help businesses optimize their processes, reduce inefficiencies, and make faster, smarter decisions.
+              {t('about.description1')}
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Our modular solutions are designed to integrate seamlessly into existing workflows, enabling better planning, clearer visibility, and measurable impact across key areas like production, warehousing, and distribution.
+              {t('about.description2')}
             </p>
             <p className="text-gray-300 text-lg leading-relaxed">
-              With a strong commercial focus, Boost delivers not just technology — but business value. We partner with our clients to understand their goals, build scalable tools around their needs, and ensure every solution supports growth, profitability, and long-term competitiveness in an evolving market.
+              {t('about.description3')}
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6">
             <div className="text-center p-6 bg-gray-800 rounded-lg">
               <CheckCircle className="w-12 h-12 text-blue-400 mb-4 mx-auto" />
-              <h4 className="font-semibold text-white mb-2">Built for Efficiency</h4>
-              <p className="text-sm text-gray-300">Streamlined solutions that maximize impact</p>
+              <h4 className="font-semibold text-white mb-2">{t('about.efficiency.title')}</h4>
+              <p className="text-sm text-gray-300">{t('about.efficiency.description')}</p>
             </div>
             <div className="text-center p-6 bg-gray-800 rounded-lg">
               <Eye className="w-12 h-12 text-purple-400 mb-4 mx-auto" />
-              <h4 className="font-semibold text-white mb-2">Data-Driven by Design</h4>
-              <p className="text-sm text-gray-300">Every decision backed by intelligent insights</p>
+              <h4 className="font-semibold text-white mb-2">{t('about.dataDriven.title')}</h4>
+              <p className="text-sm text-gray-300">{t('about.dataDriven.description')}</p>
             </div>
             <div className="text-center p-6 bg-gray-800 rounded-lg">
               <TrendingUp className="w-12 h-12 text-blue-400 mb-4 mx-auto" />
-              <h4 className="font-semibold text-white mb-2">Fast-to-Deploy Tools</h4>
-              <p className="text-sm text-gray-300">Rapid implementation for immediate value</p>
+              <h4 className="font-semibold text-white mb-2">{t('about.fastDeploy.title')}</h4>
+              <p className="text-sm text-gray-300">{t('about.fastDeploy.description')}</p>
             </div>
             <div className="text-center p-6 bg-gray-800 rounded-lg">
               <Layers className="w-12 h-12 text-purple-400 mb-4 mx-auto" />
-              <h4 className="font-semibold text-white mb-2">Scalable by Nature</h4>
-              <p className="text-sm text-gray-300">Solutions that grow with your business</p>
+              <h4 className="font-semibold text-white mb-2">{t('about.scalable.title')}</h4>
+              <p className="text-sm text-gray-300">{t('about.scalable.description')}</p>
             </div>
           </div>
         </div>
